@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TankSpwaner : MonoBehaviour
 {
+    public List<Tank> tankList;
     public TankView tankView;
 
     // Start is called before the first frame update
@@ -14,7 +15,7 @@ public class TankSpwaner : MonoBehaviour
 
     void CreateTank()
     {
-        TankModel tankModel = new TankModel(30, 20);
+        TankModel tankModel = new TankModel(tankList[0].movementSpeed, tankList[0].rotationSpeed, tankList[0].tankType, tankList[0].color);
         TankControler tankControler = new TankControler(tankModel, tankView);
     }
 }
